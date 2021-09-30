@@ -1,15 +1,24 @@
-import { useAuth0 } from "@auth0/auth0-react";
+import { useHistory } from "react-router";
+import Typography from "@mui/material/Typography";
+import AppBar from "@mui/material/AppBar";
 import Container from "@mui/material/Container";
-import LoginButton from "../Authentication/LoginButton";
-import LogoutButton from "../Authentication/LogoutButton";
-import Profile from "../Authentication/Profile";
+import Link from "@mui/material/Link";
 
 const NavBar = () => {
-  const { isAuthenticated } = useAuth0();
+  const history = useHistory();
+
   return (
     <Container>
-      {isAuthenticated ? <LogoutButton /> : <LoginButton />}
-      {isAuthenticated && <Profile />}
+      <AppBar>
+        <Typography variant="h6">NavBar</Typography>
+        <Link
+          component="button"
+          variant="body2"
+          onClick={() => history.push("/signup")}
+        >
+          Sign Up
+        </Link>
+      </AppBar>
     </Container>
   );
 };
