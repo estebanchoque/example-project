@@ -1,0 +1,14 @@
+.singup {
+  display: flex;
+  flex-direction: column;
+}
+
+.singupContainer {
+  background-color: rgb(43, 43, 43);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.formcontainer {
+  margin-top: 2em;
+}
