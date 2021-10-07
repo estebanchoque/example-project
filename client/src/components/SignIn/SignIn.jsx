@@ -7,10 +7,9 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
+import Paper from "@mui/material/Paper";
+import Link from "@mui/material/Link";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import { Container, Link, Paper } from "@mui/material";
 
 const initialValues = {
   username: "",
@@ -19,10 +18,9 @@ const initialValues = {
 };
 
 const SignIn = () => {
-
   const handleSubmit = (values, { setSubmitting }) => {
-    console.log(values)
-  }
+    console.log(values);
+  };
 
   return (
     <div>

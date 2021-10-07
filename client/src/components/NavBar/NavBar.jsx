@@ -3,7 +3,6 @@ import AccountMenu from "./AccountMenu";
 import Typography from "@mui/material/Typography";
 import AppBar from "@mui/material/AppBar";
 import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
 
 const NavBar = () => {
   const [user, setUser] = React.useState({
@@ -31,7 +30,6 @@ const NavBar = () => {
           spacing={50}
         >
           <Typography variant="h6">ExampleApp</Typography>
-          <Button onClick={() => handleUser(true)}>Log</Button>
           <AccountMenu user={user} handler={handleUser} />
         </Stack>
       </AppBar>

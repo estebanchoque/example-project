@@ -12,8 +12,9 @@ import PersonAdd from "@mui/icons-material/PersonAdd";
 import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
 import HelpIcon from "@mui/icons-material/Help";
+import { Typography } from "@mui/material";
 
-const AccountMenu = ({ user, handleUser }) => {
+const AccountMenu = ({ user, handler }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
@@ -28,6 +29,7 @@ const AccountMenu = ({ user, handleUser }) => {
   return (
     <React.Fragment>
       <Box sx={{ display: "flex", alignItems: "center" }}>
+        <Typography sx={{ mr: 2 }}>Hi, {user.username}!</Typography>
         <IconButton LinkComponent={Link} to="/info">
           <HelpIcon />
         </IconButton>
@@ -92,7 +94,7 @@ const AccountMenu = ({ user, handleUser }) => {
               </ListItemIcon>
               Settings
             </MenuItem>
-            <MenuItem onClick={() => handleUser(false)}>
+            <MenuItem onClick={() => handler(false)}>
               <ListItemIcon>
                 <Logout fontSize="small" />
               </ListItemIcon>
@@ -101,7 +103,7 @@ const AccountMenu = ({ user, handleUser }) => {
           </Box>
         ) : (
           <Box>
-            <MenuItem>
+            <MenuItem onClick={() => handler(true)}>
               <Avatar /> Sign In
             </MenuItem>
             <MenuItem>
