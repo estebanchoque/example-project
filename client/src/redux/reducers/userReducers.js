@@ -1,5 +1,5 @@
 const initialState = {
-  info: {},
+  info: { name: "estebanchoque" },
   isLogged: false,
 };
 
@@ -9,3 +9,5 @@ const userReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+export default userReducer;

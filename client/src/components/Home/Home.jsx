@@ -1,6 +1,5 @@
 import React from "react";
 import Cards from "../Cards/Cards";
-import NavBar from "../NavBar/NavBar";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 
