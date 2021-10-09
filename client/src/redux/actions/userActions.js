@@ -6,3 +6,10 @@ export const getUserById = (id) => {
     }
   };
 };
+
+export const userAuth = () => {
+  return async (dispatch) => {
+    try {
+    } catch (error) {}
+  };
+};

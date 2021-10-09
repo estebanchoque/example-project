@@ -1,3 +1,4 @@
+import React from "react";
 import { Route, Redirect } from "react-router-dom";
 
 const PrivateRoute = ({ children, isAuthenticated, ...rest }) => {
@@ -8,7 +9,7 @@ const PrivateRoute = ({ children, isAuthenticated, ...rest }) => {
         isAuthenticated ? (
           children
         ) : (
-          <Redirect to={{ pathname: "/login", state: { from: location } }} />
+          <Redirect to={{ pathname: "/signin", state: { from: location } }} />
         )
       }
     />

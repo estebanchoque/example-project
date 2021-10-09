@@ -1,22 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
-import { Auth0Provider } from "@auth0/auth0-react";
+import { Provider } from "react-redux";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import store from "./redux/store/index";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Auth0Provider
-      domain="dev-lunsrmod.us.auth0.com"
-      clientId="KjzQFrvQqbHcwuqS5rx7J8b9hH8z6JHZ"
-      redirectUri={window.location.origin}
-    >
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Auth0Provider>
+    <Provider store={store}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

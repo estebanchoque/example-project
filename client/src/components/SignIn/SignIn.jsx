@@ -10,16 +10,24 @@ import TextField from "@mui/material/TextField";
 import Paper from "@mui/material/Paper";
 import Link from "@mui/material/Link";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormControl from "@mui/material/FormControl";
+import FormLabel from "@mui/material/FormLabel";
 
 const initialValues = {
   username: "",
   password: "",
+  type_of_home: null,
   showPassword: false,
 };
 
 const SignIn = () => {
   const handleSubmit = (values, { setSubmitting }) => {
-    console.log(values);
+    const { showPassword, ...input } = values;
+    console.log(input);
+    setSubmitting(false);
   };
 
   return (
@@ -93,10 +101,27 @@ const SignIn = () => {
                     )}
                     helperText={errors.password}
                   />
-                  {/* <FormControlLabel
-                    control={<Checkbox value="remember" color="primary" />}
-                    label="Remember me"
-                  /> */}
+                  <FormControl component="fieldset">
+                    <FormLabel component="legend">Type of Home</FormLabel>
+                    <RadioGroup
+                      row
+                      aria-label="type_of_home"
+                      name="type_of_home"
+                      value={values.type_of_home}
+                      onChange={handleChange}
+                    >
+                      <FormControlLabel
+                        value={true}
+                        control={<Radio />}
+                        label="Yes"
+                      />
+                      <FormControlLabel
+                        value={false}
+                        control={<Radio />}
+                        label="No"
+                      />
+                    </RadioGroup>
+                  </FormControl>
                   <Button
                     type="submit"
                     fullWidth

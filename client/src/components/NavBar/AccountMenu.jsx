@@ -81,7 +81,7 @@ const AccountMenu = ({ user, handler }) => {
       >
         {user.isLogged ? (
           <Box>
-            <MenuItem>
+            <MenuItem component={Link} to="/profile">
               <Avatar /> Profile
             </MenuItem>
             <MenuItem>
