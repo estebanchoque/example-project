@@ -3,6 +3,7 @@ import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import Fav from "../Fav/Fav";
 
 const Card = ({ id, title, description }) => {
   const onClick = () => {
@@ -10,12 +11,7 @@ const Card = ({ id, title, description }) => {
   };
 
   return (
-    <Grid
-      item
-      component={Paper}
-      sx={{ m: 4, width: 400, p: 5 }}
-      elevation={3}
-    >
+    <Grid item component={Paper} sx={{ m: 4, width: 400, p: 5 }} elevation={3}>
       <Typography gutterBottom variant="h4">
         {title}
       </Typography>
@@ -25,6 +21,7 @@ const Card = ({ id, title, description }) => {
       <Button variant="outlined" onClick={onClick}>
         LEARN MORE
       </Button>
+      <Fav id={id} />
     </Grid>
   );
 };
