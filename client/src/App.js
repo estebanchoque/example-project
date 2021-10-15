@@ -11,6 +11,7 @@ const SignUp = lazy(() => import("./components/SignUp/SignUp"));
 const SignIn = lazy(() => import("./components/SignIn/SignIn"));
 const Home = lazy(() => import("./components/Home/Home"));
 const NavBar = lazy(() => import("./components/NavBar/NavBar"));
+const MUI = lazy(() => import("./components/MUIexamples/index"));
 
 function App() {
   const isAuth = false;
@@ -19,6 +20,7 @@ function App() {
     <div className="App">
       <Suspense fallback={<CircularProgress />}>
         <Route path="/" component={NavBar} />
+        <Route path="/material-ui" component={MUI} />
         <Switch>
           <Route exact path="/" component={Home} />
           <PublicRoute
